@@ -1,0 +1,141 @@
+ body{
+  margin:0;
+  background:linear-gradient(135deg,#ffd1e8,#ffe6f2);
+  font-family:Arial, sans-serif;
+}
+
+.card{
+  width:400px;
+  background:white;
+  margin:40px auto;
+  padding:25px;
+  border-radius:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+  text-align:center;
+}
+
+/* FOTO */
+.photo{
+  width:120px;
+  height:120px;
+  margin:auto;
+  border-radius:50%;
+  overflow:hidden;
+  cursor:pointer;
+}
+.photo img{
+  width:100%;
+}
+
+/* ANIMASI */
+.fade{
+  animation:fadeUp .8s ease;
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+h1{
+  color:#ff4f9a;
+  margin:15px 0 5px;
+}
+
+hr{
+  margin:20px 0;
+}
+
+/* MUSIC */
+.music{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+/* BUTTON */
+button{
+  width:100%;
+  padding:10px;
+  margin-top:10px;
+  border:none;
+  border-radius:12px;
+  background:#ff7bbd;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* CONTENT */
+.content{
+  display:none;
+  margin-top:10px;
+  color:#555;
+  font-size:14px;
+}
+
+/* POPUP FOTO */
+.popup{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  justify-content:center;
+  align-items:center;
+}
+.popup img{
+  width:220px;
+  border-radius:20px;
+}
+#songTitle{
+  margin-top:8px;
+  font-size:14px;
+  color:#555;
+}
+
+.hidden{
+  display:none;
+}
+.biodata{
+  text-align:left;
+  margin-top:15px;
+  font-size:14px;
+}
+
+.biodata p{
+  margin:6px 0;
+}
+
+.biodata span{
+  display:inline-block;
+  width:120px;
+  font-weight:600;
+}
+.info {
+  margin-top: 15px;
+}
+
+.info-item {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideFade 0.6s ease forwards;
+}
+
+.info-item:nth-child(1) { animation-delay: 0.2s; }
+.info-item:nth-child(2) { animation-delay: 0.4s; }
+.info-item:nth-child(3) { animation-delay: 0.6s; }
+.info-item:nth-child(4) { animation-delay: 0.8s; }
+.info-item:nth-child(5) { animation-delay: 1s; }
+
+@keyframes slideFade {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.info-item {
+  display: flex;
+  gap: 10px;
+  font-size: 15px;
+}
