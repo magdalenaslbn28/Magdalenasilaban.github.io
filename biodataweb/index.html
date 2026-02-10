@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Biodata Magdalena</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="card">
+
+  <!-- FOTO -->
+  <div class="photo" onclick="openPhoto()">
+    <img src="foto.jpg">
+  </div>
+
+  <!-- NAMA -->
+  <h1 class="fade">Magdalena Silaban</h1>
+
+  <div class="biodata">
+  <p class="info-item"><span>Date of Birth</span> : 28 August</p>
+  <p class="info-item"><span>Address</span> : Batam, Indonesia</p>
+  <p class="info-item"><span>Education</span> : Information System, UIB</p>
+  <p class="info-item"><span>Religion</span> : Catholic</p>
+  <p class="info-item"><span>Marital Status</span> : Unmarried</p>
+</div>
+
+
+<audio id="photoSound">
+  <source src="wow.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="clickSound">
+  <source src="pop.mp3" type="audio/mpeg">
+</audio>
+
+  <hr>
+
+<div class="music" onclick="toggleMusic()">
+  <strong id="musicLabel">🎵 Favorite Song</strong>
+</div>
+
+<p id="songTitle" class="hidden">Raindance - Dave</p>
+
+<audio id="song">
+  <source src="raindance.mp3" type="audio/mpeg">
+</audio>
+
+
+  <!-- BUTTON -->
+  <button onclick="playClick(); toggleContent('about')">About Me</button>
+  <div id="about" class="content">
+    One thing about me is I have delusional optimism and crazy faith so one way or another, im making it happen and it's always going to work out for me.
+  </div>
+
+  <button onclick="playClick();toggleContent('experience')">Best Experience</button>
+  <div id="experience" class="content">
+    Life taught me independence early,from running a small business as a kid, living in a dorm at 10, to enjoying my high school years as a boarding student, student council member, and class champion.
+Each experience quietly built my resilience and confidence.
+  </div>
+
+  <button onclick="playClick();toggleContent('goal')">Long Term Goals</button>
+  <div id="goal" class="content">
+    Graduate on time with top results,Land a job that matches my passion,Build my own business,Travel abroad and collect experiences, not just memories.
+  </div>
+
+  <button onclick="playClick();toggleContent('mindset')">Mindset</button>
+  <div id="mindset" class="content">
+    Let whoever, think whatever.
+  </div>
+
+</div>
+
+<!-- POPUP FOTO -->
+<div class="popup" id="popup" onclick="closePhoto()">
+  <img src="foto.jpg">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
