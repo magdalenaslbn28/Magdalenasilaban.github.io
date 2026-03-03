@@ -1,0 +1,108 @@
+body {
+    font-family: Poppins, sans-serif;
+    margin: 0;
+    background-color: #f5f5f5;
+}
+
+header {
+    background: #6c757d;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 10px;
+    font-weight: bold;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 30px;
+    background-color: white;
+}
+
+.photo img {
+    width: 280px;
+    border-radius: 20px;
+}
+
+.side-info {
+    max-width: 400px;
+}
+
+.about-top {
+    margin-bottom: 25px;
+}
+
+.ig-btn {
+    background: #e1306c;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+.main {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+}
+
+.left {
+    width: 45%;
+}
+
+.right {
+    width: 40%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: white;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+th {
+    background-color: #2ecc71; /* HIJAU SOFT  */
+    color: white;
+    text-align: left;
+}
+
+td {
+    background-color: white;
+}
+
+.pink-btn {
+    display: block;
+    margin: 15px 0;
+    background: #e1306c;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .top, .main {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .left, .right {
+        width: 100%;
+    }
+    
+}
