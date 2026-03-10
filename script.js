@@ -1,36 +1,34 @@
 function startTime() {
     const today = new Date();
-    let h = today.getHours(); let m = today.getMinutes(); let s = today.getSeconds();
-    m = checkTime(m); s = checkTime(s);
+    let h = today.getHours(), m = today.getMinutes(), s = today.getSeconds();
+    m = m < 10 ? "0" + m : m;
+    s = s < 10 ? "0" + s : s;
     document.getElementById('clock').innerHTML = h + ":" + m + ":" + s;
     setTimeout(startTime, 1000);
 }
-function checkTime(i) { if (i < 10) {i = "0" + i}; return i; }
 
 function reveal() {
-    var reveals = document.querySelectorAll(".reveal");
-    for (var i = 0; i < reveals.length; i++) {
-        var windowHeight = window.innerHeight;
-        var elementTop = reveals[i].getBoundingClientRect().top;
-        if (elementTop < windowHeight - 150) { reveals[i].classList.add("active"); }
-    }
+    let reveals = document.querySelectorAll(".reveal");
+    reveals.forEach(el => {
+        let windowHeight = window.innerHeight;
+        let elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 100) el.classList.add("active");
+    });
 }
+
 window.addEventListener("scroll", reveal);
-window.onload = function() { startTime(); reveal(); };
+window.onload = () => { startTime(); reveal(); };
 
 function toggleNav() {
-    const nav = document.getElementById("sideNav");
-    nav.style.width = (nav.style.width === "300px") ? "0" : "300px";
+    let nav = document.getElementById("sideNav");
+    nav.style.width = nav.style.width === "300px" ? "0" : "300px";
 }
 
-const audio = document.getElementById("myAudio");
-function playMusic() { audio.play(); }
-function pauseMusic() { audio.pause(); }
+function playMusic() { document.getElementById("myAudio").play(); }
+function pauseMusic() { document.getElementById("myAudio").pause(); }
 
 function showPhoto(url) {
-    const modal = document.getElementById("photoModal");
-    const modalImg = document.getElementById("imgTarget");
-    modal.style.display = "flex";
-    modalImg.src = url;
+    document.getElementById("photoModal").style.display = "flex";
+    document.getElementById("imgTarget").src = url;
 }
 function closeModal() { document.getElementById("photoModal").style.display = "none"; }

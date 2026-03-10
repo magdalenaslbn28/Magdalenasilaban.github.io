@@ -3,16 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LENALENANA | Profile</title>
+    <title>LENALENANA | Official Profile</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body onload="startTime()">
 
 <nav id="sideNav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
-    <div class="nav-header">
-        <h2 style="color: white; padding-left: 20px; font-family: 'Inter';">Navigation</h2>
-    </div>
+    <div class="nav-header"><h2 style="color: white; padding-left: 20px;">Navigation</h2></div>
     <a href="#me">🏠 Beranda</a>
     <a href="#profil">👤 Profil</a>
     <a href="#academy">🎓 Academy</a>
@@ -25,34 +23,39 @@
             <div class="menu-btn" onclick="toggleNav()">☰ Menu</div>
             <span class="logo">LENALENANA</span>
         </div>
-        <div class="header-info">📧 aylejunk6@email.com</div>
+        <div class="header-right">
+            <div id="clock" class="digital-clock">00:00:00</div>
+            <div class="header-info">📧 aylejunk6@email.com</div>
+        </div>
     </div>
 </header>
 
 <main class="wrapper">
-    <section id="me" class="section-me reveal">
-        <div class="me-content">
-            <div class="photo-container">
-                <img src="profil.jpg" alt="Profile" id="mainPhoto">
-            </div>
-            <div class="text-about">
-                <span class="label">Introduction</span>
-                <h1>About Me</h1>
-                <div id="clock" class="digital-clock">00:00:00</div>
-                <p class="description">Digital enthusiast focused on creating meaningful experiences through system information and aesthetic design.</p>
-            </div>
-        </div>
-    </section>
-
     <div class="main-layout-container">
+        
         <div class="content-left">
+            
+            <section id="me" class="section-me reveal active">
+                <div class="me-content">
+                    <div class="photo-container">
+                        <img src="profil.jpg" alt="Profile" id="mainPhoto">
+                    </div>
+                    <div class="text-about">
+                        <span class="label">Introduction</span>
+                        <h1>About Me</h1>
+                        <p class="description">just a human bean 🫘 who’s currently surviving college life with 99+ tabs open and a lot of iced coffee☕️. my life is 50% logic, 50% pinterest board, and 100% manifesting a good grade! 🕯️✨💻🎧 exploring the intersection of tech and art. stay hydrated and stay aesthetic! 🦢.</p>
+                    </div>
+                </div>
+            </section>
+
             <section id="profil" class="section-profil reveal">
                 <h3 class="title-serif">Personal Identity</h3>
                 <table class="table-biodata">
                     <tr><td>Full Name</td><td>Magdalena Silaban</td></tr>
                     <tr><td>Birth Info</td><td>Batam, 28 August</td></tr>
                     <tr><td>Faith</td><td>Catholic</td></tr>
-                    <tr><td>Location</td><td>Batam, Indonesia</td></tr>
+                    <tr><td>Location</td><td>BTH: 1.0333° N, 104.0500° E</td></tr>
+                    <tr><td>Nationality</td><td>Indonesian</td></tr>
                 </table>
             </section>
 
@@ -63,10 +66,10 @@
                         <tr><th>Level</th><th>Institution</th><th>Period</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>Elementary</td><td>SD 002 Negri Kota Batam</td><td>2011 - 2017</td></tr>
-                        <tr><td>Junior High</td><td>SMPS Panti Budaya, Kisaran</td><td>2017 - 2020</td></tr>
-                        <tr><td>Senior High</td><td>SMAS Budi Murni 1, Medan</td><td>2020 - 2023</td></tr>
-                        <tr><td>University</td><td>Universitas Internasional Batam</td><td>2023 - Present</td></tr>
+                        <tr><td>Elementary</td><td>SDN 001 Sei Beduk Batam</td><td>2013 - 2019</td></tr>
+                        <tr><td>Junior High</td><td>SMPS Panti Budaya Kisaran</td><td>2019 - 2022</td></tr>
+                        <tr><td>Senior High</td><td>SMAS Budi Murni 1 Medan</td><td>2022 - 2025</td></tr>
+                        <tr><td>University</td><td>Universitas Internasional Batam</td><td>2025 - Now</td></tr>
                     </tbody>
                 </table>
             </section>
@@ -74,7 +77,7 @@
             <section id="music" class="section-music reveal">
                 <div class="music-player">
                     <span class="label">Now Playing</span>
-                    <h4 style="margin: 10px 0;">Raindance — Dave</h4>
+                    <h4>Raindance — Dave</h4>
                     <audio id="myAudio"><source src="raindance.mp3" type="audio/mpeg"></audio>
                     <div class="player-btns">
                         <button onclick="playMusic()">PLAY</button>
@@ -84,28 +87,22 @@
 
                 <div class="fav-grid">
                     <div class="fav-item" onclick="showPhoto('rapokki.jpg')">
-                        <span class="fav-label">Favorite Food</span>
-                        <p>Nasi Goreng 🍛</p>
+                        <span class="fav-label">Food</span><p>Rapokki 🍛</p>
                     </div>
-                    <div class="fav-item" onclick="showPhoto('hobbyc.jpg')">
-                        <span class="fav-label">Hobby</span>
-                        <p>Figma Design 🎨</p>
+                    <div class="fav-item no-click">
+                        <span class="fav-label">Song</span><p>Raindance 🎧</p>
                     </div>
                     <div class="fav-item" onclick="showPhoto('drink.jpg')">
-                        <span class="fav-label">Favorite Drink</span>
-                        <p>Iced Coffee ☕</p>
+                        <span class="fav-label">Drink</span><p>Brownsugar Boba ☕</p>
                     </div>
                     <div class="fav-item" onclick="showPhoto('movie.jpg')">
-                        <span class="fav-label">Favorite Movie</span>
-                        <p>Interstellar 🚀</p>
+                        <span class="fav-label">Movie</span><p>Weightlifting Fairy Kim Bok Joo 🚀</p>
                     </div>
                     <div class="fav-item" onclick="showPhoto('singer.jpg')">
-                        <span class="fav-label">Favorite Singer</span>
-                        <p>Tulus ✨</p>
+                        <span class="fav-label">Singer</span><p>Lana Del Rey ✨</p>
                     </div>
                     <div class="fav-item" onclick="showPhoto('actor.jpg')">
-                        <span class="fav-label">Favorite Actor</span>
-                        <p>Timothée Chalamet 🎬</p>
+                        <span class="fav-label">Actor</span><p>Lutesha 🎬</p>
                     </div>
                 </div>
             </section>
@@ -113,22 +110,30 @@
 
         <aside class="side-panel-right">
             <div class="card-group">
-                <h3>Keahlian</h3>
-                <ul>
-                    <li>🎧 I can rapp</li>
-                    <li>🍼I’m 08L</li>
-                    <li>💃 Love dancing</li>
+                <h3>Current Vibe</h3>
+                <p>☕ Coffee & Code</p>
+                <p>☘️ Earth tone 4ever</p>
+            </div>
+            <div class="card-group">
+                <h3>Quick Links</h3>
+                <p><a href="www.instagram.com/kekeyihae">Instagram</a></p>
+                <p><a href="#">LinkedIn</a></p>
+            </div>
+            <div class="card-group">
+                <h3>Fun Facts?!</h3>
+                <p>I can rapp 🎤</p>
+                <p>I'm 08L ✨</p>
+            </div>
+            <div class="card-group">
+                <h3>Experience</h3>
+                <ul class="skill-list">
+                    <li>Sekretaris OSIS SMA<3</li>
+                    <li>OSN Biology 2x but never lolos:(</li>
+                    <li>HMPS SI UIB WKWK</li>
                 </ul>
             </div>
-            <div class="card-group">
-                <h3>Another fact</h3>
-                <p>INFJ gang🤟🏾</p>
-            </div>
-            <div class="card-group">
-                <h3>Fokus Saat Ini</h3>
-                <p class="quote">"Sedang mendalami logika pemrograman dan analisis sistem. 🚀"</p>
-            </div>
         </aside>
+
     </div>
 </main>
 

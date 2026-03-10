@@ -1,72 +1,349 @@
+/* 1. IMPORT FONTS & VARIABLES */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Inter:wght@300;400;600&display=swap');
 
 :root {
     --dark-choco: #3d2b1f;
-    --nav-bg: #3d2b1f; 
+    --nav-bg: #3d2b1f;
     --accent: #8e735b;
+    --light-bg: #fdfdfd;
 }
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; font-family: 'Inter', sans-serif; background-color: #fdfdfd; color: #1a1a1a; overflow-x: hidden; }
+/* 2. GENERAL STYLES */
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
 
-header { position: fixed; top: 0; width: 100%; background: #fff; padding: 15px 5%; z-index: 90; border-bottom: 1px solid #eee; }
-.nav-container { display: flex; justify-content: space-between; align-items: center; }
-.header-left { display: flex; align-items: center; gap: 20px; }
-.logo { font-weight: 600; letter-spacing: 4px; font-size: 1.1rem; }
-.menu-btn { background: var(--nav-bg); color: white; padding: 8px 15px; border-radius: 4px; cursor: pointer; font-size: 0.7rem; }
+html { 
+    scroll-behavior: smooth; 
+}
 
-.sidenav { height: 100%; width: 0; position: fixed; z-index: 200; top: 0; left: 0; background-color: var(--nav-bg); overflow-x: hidden; transition: 0.5s; padding-top: 60px; }
-.sidenav a { padding: 15px 30px; text-decoration: none; font-size: 1rem; color: white !important; display: block; transition: 0.3s; }
-.sidenav a:hover { background: rgba(255,255,255,0.1); }
-.sidenav .closebtn { position: absolute; top: 10px; right: 25px; font-size: 36px; color: white; }
+body { 
+    font-family: 'Inter', sans-serif; 
+    background-color: var(--light-bg); 
+    color: #1a1a1a; 
+    overflow-x: hidden; 
+    line-height: 1.6;
+}
 
-.wrapper { width: 95%; margin: 150px auto 0; }
+/* 3. HEADER & CLOCK */
+header { 
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+    background: #fff; 
+    padding: 10px 5%; 
+    z-index: 100; 
+    border-bottom: 1px solid #eee; 
+    height: 70px;
+}
 
-.reveal { opacity: 0; transform: translateY(30px); transition: 1s ease-out; }
-.reveal.active { opacity: 1; transform: translateY(0); }
+.nav-container { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    height: 100%; 
+}
 
-.section-me { margin-bottom: 80px; position: relative; }
-.me-content { display: flex; align-items: flex-start; justify-content: center; gap: 60px; padding-left: 50px; position: relative; }
-.photo-container img { width: 250px; height: 350px; object-fit: cover; border: 1px solid #000; }
-.text-about { text-align: left; flex: 1; max-width: 600px; position: relative; }
-.text-about h1 { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; margin: 10px 0; }
+.header-left, .header-right { 
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
+}
 
-/* JAM DIGITAL: BACKGROUND COKELAT TUA, ANGKA PUTIH */
-.digital-clock { 
-    position: absolute;
-    right: -80px; 
-    top: 50px;
-    font-size: 1.8rem; 
+.logo { 
     font-weight: 600; 
-    color: white; /* Angka Putih */
-    background: var(--dark-choco); /* Background Cokelat Tua */
-    padding: 12px 25px; 
-    border-radius: 10px;
-    box-shadow: 4px 4px 15px rgba(0,0,0,0.2);
+    letter-spacing: 4px; 
+    font-size: 1.1rem; 
 }
 
-.description { line-height: 1.6; font-weight: 300; max-width: 400px; }
+.menu-btn { 
+    background: var(--nav-bg); 
+    color: white; 
+    padding: 8px 15px; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    font-size: 0.75rem; 
+    text-transform: uppercase;
+}
 
-.main-layout-container { display: flex; justify-content: space-between; align-items: flex-start; padding: 0 5%; gap: 40px; position: relative; }
-.content-left { flex: 1; min-width: 0; }
-.side-panel-right { flex: 0 0 250px; background: #fff; padding: 25px; border: 1px solid #eee; border-radius: 8px; position: sticky; top: 100px; z-index: 10; }
+.digital-clock { 
+    background: var(--dark-choco); 
+    color: white; 
+    padding: 6px 15px; 
+    border-radius: 6px; 
+    font-weight: 600; 
+    font-size: 1rem; 
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
 
-.title-serif { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; text-align: center; margin: 50px 0 25px; }
-.table-biodata { width: 100%; max-width: 500px; margin: 0 auto 50px; border-collapse: collapse; background: var(--dark-choco); color: white; }
-.table-biodata td { border: 1px solid rgba(255,255,255,0.1); padding: 18px; }
-.table-pendidikan { width: 100%; border-collapse: collapse; border: 2px solid var(--dark-choco); margin-bottom: 50px; }
-.table-pendidikan th { background: var(--dark-choco); color: white; padding: 15px; }
-.table-pendidikan td { border: 1px solid #ddd; padding: 15px; text-align: center; }
+.header-info { 
+    font-size: 0.8rem; 
+    color: #555;
+}
 
-.fav-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 40px; padding-bottom: 80px; }
-.fav-item { background: #fff; padding: 15px; border: 1px solid #eee; border-radius: 8px; text-align: center; cursor: pointer; transition: 0.3s; }
-.fav-item:hover { transform: translateY(-5px); border-color: var(--accent); }
-.fav-label { font-size: 0.6rem; text-transform: uppercase; color: var(--accent); font-weight: 600; }
-.fav-item p { margin: 8px 0 0; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; }
+/* 4. NAVIGATION (SIDENAV) */
+.sidenav { 
+    height: 100%; 
+    width: 0; 
+    position: fixed; 
+    z-index: 200; 
+    top: 0; 
+    left: 0; 
+    background-color: var(--nav-bg); 
+    overflow-x: hidden; 
+    transition: 0.5s; 
+    padding-top: 60px; 
+}
 
-.section-music { text-align: center; margin-top: 50px; padding-top: 30px; border-top: 1px solid #eee; }
-.player-btns button { background: transparent; border: 2px solid #000; padding: 8px 25px; cursor: pointer; font-weight: 600; margin: 0 5px; }
-.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.95); align-items: center; justify-content: center; }
-.modal-content { max-width: 400px; border: 2px solid var(--dark-choco); }
-.label { color: var(--accent); font-size: 0.8rem; text-transform: uppercase; font-weight: 600; }
+.sidenav a { 
+    padding: 15px 30px; 
+    text-decoration: none; 
+    font-size: 1rem; 
+    color: white !important; 
+    display: block; 
+    transition: 0.3s;
+}
+
+.sidenav a:hover { 
+    background: rgba(255,255,255,0.1); 
+    padding-left: 40px; 
+}
+
+.sidenav .closebtn { 
+    position: absolute; 
+    top: 10px; 
+    right: 25px; 
+    font-size: 36px; 
+    color: white;
+}
+
+/* 5. MAIN WRAPPER & LAYOUT */
+.wrapper { 
+    width: 95%; 
+    margin: 120px auto 0; 
+}
+
+.main-layout-container { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-start; 
+    gap: 50px; 
+    position: relative; 
+    width: 100%;
+}
+
+.content-left { 
+    flex: 1; 
+    min-width: 0;
+}
+
+/* 6. SECTION ME (ABOUT ME) */
+.section-me { 
+    margin-bottom: 80px; 
+}
+
+.me-content { 
+    display: flex; 
+    align-items: center; 
+    gap: 60px; 
+}
+
+.photo-container img { 
+    width: 250px; 
+    height: 350px; 
+    object-fit: cover; 
+    border: 1px solid #000; 
+}
+
+.text-about h1 { 
+    font-family: 'Cormorant Garamond', serif; 
+    font-size: 4rem; 
+    margin-bottom: 10px; 
+    color: #1a1a1a;
+}
+
+.label { 
+    color: var(--accent); 
+    font-size: 0.8rem; 
+    text-transform: uppercase; 
+    font-weight: 600; 
+    letter-spacing: 2px;
+}
+
+.description { 
+    max-width: 500px; 
+    font-weight: 300; 
+    font-size: 1rem;
+}
+
+/* 7. SIDEBAR RIGHT (STICKY) */
+.side-panel-right { 
+    flex: 0 0 280px; 
+    background: #fff; 
+    padding: 30px; 
+    border: 1px solid #eee; 
+    border-radius: 12px; 
+    position: sticky; 
+    top: 100px; 
+    margin-top: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+}
+
+.card-group { 
+    margin-bottom: 25px; 
+}
+
+.card-group h3 { 
+    font-size: 0.75rem; 
+    text-transform: uppercase; 
+    color: var(--accent); 
+    margin-bottom: 10px; 
+    border-bottom: 1px solid #eee; 
+    padding-bottom: 5px;
+}
+
+.card-group p, .card-group li { 
+    font-size: 0.85rem; 
+    margin-bottom: 5px;
+}
+
+.card-group a { 
+    color: var(--dark-choco); 
+    text-decoration: underline;
+}
+
+/* 8. TABLES */
+.title-serif { 
+    font-family: 'Cormorant Garamond', serif; 
+    font-size: 2.5rem; 
+    margin: 60px 0 30px; 
+    text-align: center; 
+}
+
+.table-biodata { 
+    width: 100%; 
+    max-width: 600px; 
+    margin: 0 auto 50px; 
+    border-collapse: collapse; 
+    background: var(--dark-choco); 
+    color: white; 
+}
+
+.table-biodata td { 
+    padding: 18px; 
+    border: 1px solid rgba(255,255,255,0.1); 
+}
+
+.table-pendidikan { 
+    width: 100%; 
+    border-collapse: collapse; 
+    border: 2px solid var(--dark-choco); 
+    margin-bottom: 60px;
+}
+
+.table-pendidikan th { 
+    background: var(--dark-choco); 
+    color: white; 
+    padding: 15px; 
+    text-transform: uppercase; 
+    font-size: 0.9rem;
+}
+
+.table-pendidikan td { 
+    border: 1px solid #ddd; 
+    padding: 15px; 
+    text-align: center;
+}
+
+/* 9. FAV GRID (LENGKAP 6) */
+.fav-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px; 
+    margin: 40px 0 100px; 
+}
+
+.fav-item { 
+    background: #fff; 
+    border: 1px solid #eee; 
+    padding: 20px; 
+    text-align: center; 
+    border-radius: 12px; 
+    cursor: pointer; 
+    transition: 0.3s;
+}
+
+.fav-item:hover { 
+    border-color: var(--accent); 
+    transform: translateY(-5px); 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.fav-label { 
+    font-size: 0.65rem; 
+    text-transform: uppercase; 
+    color: var(--accent); 
+    font-weight: 600; 
+}
+
+.fav-item p { 
+    font-family: 'Cormorant Garamond', serif; 
+    font-size: 1.2rem; 
+    margin-top: 8px; 
+    font-weight: 600;
+}
+
+/* 10. MUSIC PLAYER */
+.section-music { 
+    text-align: center; 
+    padding-top: 40px; 
+    border-top: 1px solid #eee; 
+}
+
+.player-btns button { 
+    background: transparent; 
+    border: 2px solid #000; 
+    padding: 10px 30px; 
+    margin: 0 10px; 
+    cursor: pointer; 
+    font-weight: 600; 
+    transition: 0.3s;
+}
+
+.player-btns button:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* 11. MODAL & ANIMATION */
+.modal { 
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(255,255,255,0.95); 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.modal-content { 
+    max-width: 400px; 
+    border: 3px solid var(--dark-choco); 
+    border-radius: 10px;
+}
+
+.reveal { 
+    opacity: 0; 
+    transform: translateY(30px); 
+    transition: 1s ease-out; 
+}
+
+.reveal.active { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
