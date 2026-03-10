@@ -105,4 +105,22 @@ td {
         width: 100%;
     }
     
+.main {
+    padding: 40px;
+}
+
+.foto-table-wrapper {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.foto-table {
+    width: 170px;
+    border-radius: 15px;
+}
+
+.bottom-content {
+    text-align: center;
 }
