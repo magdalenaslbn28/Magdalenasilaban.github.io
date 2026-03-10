@@ -3,104 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WEBSITE MAGDALENA SILABAN</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>LENALENANA | Profile</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="startTime()">
+
+<nav id="sideNav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
+    <div class="nav-header">
+        <h2 style="color: white; padding-left: 20px; font-family: 'Inter';">Navigation</h2>
+    </div>
+    <a href="#me">🏠 Beranda</a>
+    <a href="#profil">👤 Profil</a>
+    <a href="#academy">🎓 Academy</a>
+    <a href="#music">🎵 Musik</a>
+</nav>
 
 <header>
-    <h1>WEBSITE MAGDALENA SILABAN</h1>
+    <div class="nav-container">
+        <div class="header-left">
+            <div class="menu-btn" onclick="toggleNav()">☰ Menu</div>
+            <span class="logo">LENALENANA</span>
+        </div>
+        <div class="header-info">📧 aylejunk6@email.com</div>
+    </div>
 </header>
 
-<!-- BAGIAN ATAS -->
-<section class="top">
+<main class="wrapper">
+    <section id="me" class="section-me reveal">
+        <div class="me-content">
+            <div class="photo-container">
+                <img src="profil.jpg" alt="Profile" id="mainPhoto">
+            </div>
+            <div class="text-about">
+                <span class="label">Introduction</span>
+                <h1>About Me</h1>
+                <div id="clock" class="digital-clock">00:00:00</div>
+                <p class="description">Digital enthusiast focused on creating meaningful experiences through system information and aesthetic design.</p>
+            </div>
+        </div>
+    </section>
 
-    <div class="photo">
-        <img src="fotoprofil.jpg" alt="Foto Saya">
-    </div>
+    <div class="main-layout-container">
+        <div class="content-left">
+            <section id="profil" class="section-profil reveal">
+                <h3 class="title-serif">Personal Identity</h3>
+                <table class="table-biodata">
+                    <tr><td>Full Name</td><td>Magdalena Silaban</td></tr>
+                    <tr><td>Birth Info</td><td>Batam, 28 August</td></tr>
+                    <tr><td>Faith</td><td>Catholic</td></tr>
+                    <tr><td>Location</td><td>Batam, Indonesia</td></tr>
+                </table>
+            </section>
 
-    <div class="side-info">
+            <section id="academy" class="section-academy reveal">
+                <h3 class="title-serif">Academic Background</h3>
+                <table class="table-pendidikan">
+                    <thead>
+                        <tr><th>Level</th><th>Institution</th><th>Period</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Elementary</td><td>SD 002 Negri Kota Batam</td><td>2011 - 2017</td></tr>
+                        <tr><td>Junior High</td><td>SMPS Panti Budaya, Kisaran</td><td>2017 - 2020</td></tr>
+                        <tr><td>Senior High</td><td>SMAS Budi Murni 1, Medan</td><td>2020 - 2023</td></tr>
+                        <tr><td>University</td><td>Universitas Internasional Batam</td><td>2023 - Present</td></tr>
+                    </tbody>
+                </table>
+            </section>
 
-        <div class="about-top">
-            <h2>About Me</h2>
-            <p>
-                Halo! Saya suka belajar hal baru dan tertarik dengan dunia IT 
-                serta pengembangan website.
-            </p>
+            <section id="music" class="section-music reveal">
+                <div class="music-player">
+                    <span class="label">Now Playing</span>
+                    <h4 style="margin: 10px 0;">Raindance — Dave</h4>
+                    <audio id="myAudio"><source src="raindance.mp3" type="audio/mpeg"></audio>
+                    <div class="player-btns">
+                        <button onclick="playMusic()">PLAY</button>
+                        <button onclick="pauseMusic()">PAUSE</button>
+                    </div>
+                </div>
+
+                <div class="fav-grid">
+                    <div class="fav-item" onclick="showPhoto('rapokki.jpg')">
+                        <span class="fav-label">Favorite Food</span>
+                        <p>Nasi Goreng 🍛</p>
+                    </div>
+                    <div class="fav-item" onclick="showPhoto('hobbyc.jpg')">
+                        <span class="fav-label">Hobby</span>
+                        <p>Figma Design 🎨</p>
+                    </div>
+                    <div class="fav-item" onclick="showPhoto('drink.jpg')">
+                        <span class="fav-label">Favorite Drink</span>
+                        <p>Iced Coffee ☕</p>
+                    </div>
+                    <div class="fav-item" onclick="showPhoto('movie.jpg')">
+                        <span class="fav-label">Favorite Movie</span>
+                        <p>Interstellar 🚀</p>
+                    </div>
+                    <div class="fav-item" onclick="showPhoto('singer.jpg')">
+                        <span class="fav-label">Favorite Singer</span>
+                        <p>Tulus ✨</p>
+                    </div>
+                    <div class="fav-item" onclick="showPhoto('actor.jpg')">
+                        <span class="fav-label">Favorite Actor</span>
+                        <p>Timothée Chalamet 🎬</p>
+                    </div>
+                </div>
+            </section>
         </div>
 
-        <div class="findme">
-            <h3>Find Me</h3>
-            <a href="https://instagram.com/kekeyihae" target="_blank" class="ig-btn">
-                Instagram
-            </a>
-        </div>
-
+        <aside class="side-panel-right">
+            <div class="card-group">
+                <h3>Keahlian</h3>
+                <ul>
+                    <li>🎧 I can rapp</li>
+                    <li>🍼I’m 08L</li>
+                    <li>💃 Love dancing</li>
+                </ul>
+            </div>
+            <div class="card-group">
+                <h3>Another fact</h3>
+                <p>INFJ gang🤟🏾</p>
+            </div>
+            <div class="card-group">
+                <h3>Fokus Saat Ini</h3>
+                <p class="quote">"Sedang mendalami logika pemrograman dan analisis sistem. 🚀"</p>
+            </div>
+        </aside>
     </div>
+</main>
 
-</section>
-
-<hr>
-
-<!-- BAGIAN BAWAH -->
-<section class="main">
-
-    <div class="foto-table-wrapper">
-
-        <!-- TABLE (KIRI) -->
-        <table>
-            <tr>
-                <th>Nama</th>
-                <td>Magdalena</td>
-            </tr>
-            <tr>
-                <th>TTL</th>
-                <td>Batam, 28 Agustus</td>
-            </tr>
-            <tr>
-                <th>Usia</th>
-                <td>17 Tahun</td>
-            </tr>
-            <tr>
-                <th>Alamat</th>
-                <td>Batam</td>
-            </tr>
-            <tr>
-                <th>Agama</th>
-                <td>Katolik</td>
-            </tr>
-            <tr>
-                <th>Hobi</th>
-                <td>Cooking</td>
-            </tr>
-        </table>
-
-        <!-- FOTO (KANAN) -->
-        <img src="foto2.jpg" alt="Foto Tambahan" class="foto-table">
-
-    </div>
-
-    <!-- FAVORITE SONG (DI BAWAHNYA) -->
-    <div class="bottom-content">
-
-        <button class="pink-btn" onclick="toggleSong()">🎵 Favorite Song</button>
-        <div id="songBox" class="hidden">
-            <p>Raindance</p>
-            <audio id="song" src="raindance.mp3"></audio>
-            <button onclick="playPause()">Play / Pause</button>
-        </div>
-
-        <button class="pink-btn" onclick="toggleQuotes()">💗 Quotes</button>
-        <div id="quotesBox" class="hidden">
-            <p><i>"Tetap rendah hati dan terus belajar."</i></p>
-        </div>
-
-    </div>
-
-</section>
-
-</section>
+<div id="photoModal" class="modal" onclick="closeModal()"><img class="modal-content" id="imgTarget"></div>
 
 <script src="script.js"></script>
 </body>
