@@ -1,9 +1,15 @@
+let currentBtn = null;
+
 function startTime() {
-    const today = new Date();
-    let h = today.getHours(), m = today.getMinutes(), s = today.getSeconds();
-    m = m < 10 ? "0" + m : m;
-    s = s < 10 ? "0" + s : s;
-    document.getElementById('clock').innerHTML = h + ":" + m + ":" + s;
+    const clock = document.getElementById('clock');
+    // Cek dulu: kalau elemen 'clock' ada, baru jalankan
+    if (clock) {
+        const today = new Date();
+        let h = today.getHours(), m = today.getMinutes(), s = today.getSeconds();
+        m = m < 10 ? "0" + m : m;
+        s = s < 10 ? "0" + s : s;
+        clock.innerHTML = h + ":" + m + ":" + s;
+    }
     setTimeout(startTime, 1000);
 }
 
@@ -16,19 +22,53 @@ function reveal() {
     });
 }
 
-window.addEventListener("scroll", reveal);
-window.onload = () => { startTime(); reveal(); };
-
 function toggleNav() {
     let nav = document.getElementById("sideNav");
-    nav.style.width = nav.style.width === "300px" ? "0" : "300px";
+    if (nav) {
+        nav.style.width = nav.style.width === "300px" ? "0" : "300px";
+    }
 }
 
-function playMusic() { document.getElementById("myAudio").play(); }
-function pauseMusic() { document.getElementById("myAudio").pause(); }
+// FUNGSI PLAY/PAUSE DENGAN GANTI TULISAN
+function playTrack(fileLagu, btn) {
+    const audio = document.getElementById("spotifyAudio");
+    if (!audio) return;
+
+    if (audio.src.includes(fileLagu)) {
+        if (audio.paused) {
+            audio.play();
+            btn.innerText = "PAUSE";
+        } else {
+            audio.pause();
+            btn.innerText = "PLAY";
+        }
+    } else {
+        // Reset tombol lagu sebelumnya kalau ada
+        if (currentBtn) currentBtn.innerText = "PLAY";
+        
+        audio.src = fileLagu;
+        audio.play();
+        btn.innerText = "PAUSE";
+        currentBtn = btn;
+    }
+}
 
 function showPhoto(url) {
-    document.getElementById("photoModal").style.display = "flex";
-    document.getElementById("imgTarget").src = url;
+    const modal = document.getElementById("photoModal");
+    const img = document.getElementById("imgTarget");
+    if (modal && img) {
+        modal.style.display = "flex";
+        img.src = url;
+    }
 }
-function closeModal() { document.getElementById("photoModal").style.display = "none"; }
+
+function closeModal() {
+    const modal = document.getElementById("photoModal");
+    if (modal) modal.style.display = "none";
+}
+
+window.addEventListener("scroll", reveal);
+window.onload = () => { 
+    startTime(); 
+    reveal(); 
+};

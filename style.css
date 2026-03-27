@@ -1,4 +1,3 @@
-/* 1. IMPORT FONTS & VARIABLES */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Inter:wght@300;400;600&display=swap');
 
 :root {
@@ -8,342 +7,258 @@
     --light-bg: #fdfdfd;
 }
 
-/* 2. GENERAL STYLES */
-* { 
-    box-sizing: border-box; 
-    margin: 0; 
-    padding: 0; 
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background-color: var(--light-bg); color: #1a1a1a; overflow-x: hidden; line-height: 1.6; }
 
-html { 
-    scroll-behavior: smooth; 
-}
+/* HEADER & NAV */
+header {
 
-body { 
-    font-family: 'Inter', sans-serif; 
-    background-color: var(--light-bg); 
-    color: #1a1a1a; 
-    overflow-x: hidden; 
-    line-height: 1.6;
-}
+    position: fixed;
 
-/* 3. HEADER & CLOCK */
-header { 
-    position: fixed; 
-    top: 0; 
-    width: 100%; 
-    background: #fff; 
-    padding: 10px 5%; 
-    z-index: 100; 
-    border-bottom: 1px solid #eee; 
+    top: 0;
+
+    width: 100%;
+
+    background: #fff;
+
+    padding: 10px 5%;
+
+    z-index: 100;
+
+    border-bottom: 1px solid #eee;
+
     height: 70px;
+
 }
 
-.nav-container { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    height: 100%; 
+
+
+.nav-container {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    height: 100%;
+
 }
 
-.header-left, .header-right { 
-    display: flex; 
-    align-items: center; 
-    gap: 20px; 
+
+
+.header-left, .header-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
 }
 
-.logo { 
-    font-weight: 600; 
-    letter-spacing: 4px; 
-    font-size: 1.1rem; 
+
+
+.logo {
+
+    font-weight: 600;
+
+    letter-spacing: 4px;
+
+    font-size: 1.1rem;
+
 }
 
-.menu-btn { 
-    background: var(--nav-bg); 
-    color: white; 
-    padding: 8px 15px; 
-    border-radius: 4px; 
-    cursor: pointer; 
-    font-size: 0.75rem; 
+
+
+.menu-btn {
+
+    background: var(--nav-bg);
+
+    color: white;
+
+    padding: 8px 15px;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    font-size: 0.75rem;
+
     text-transform: uppercase;
+
 }
 
-.digital-clock { 
-    background: var(--dark-choco); 
-    color: white; 
-    padding: 6px 15px; 
-    border-radius: 6px; 
-    font-weight: 600; 
-    font-size: 1rem; 
+
+
+.digital-clock {
+
+    background: var(--dark-choco);
+
+    color: white;
+
+    padding: 6px 15px;
+
+    border-radius: 6px;
+
+    font-weight: 600;
+
+    font-size: 1rem;
+
     box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+
 }
 
-.header-info { 
-    font-size: 0.8rem; 
+
+
+.header-info {
+
+    font-size: 0.8rem;
+
     color: #555;
+
 }
 
-/* 4. NAVIGATION (SIDENAV) */
-.sidenav { 
-    height: 100%; 
-    width: 0; 
-    position: fixed; 
-    z-index: 200; 
-    top: 0; 
-    left: 0; 
-    background-color: var(--nav-bg); 
-    overflow-x: hidden; 
-    transition: 0.5s; 
-    padding-top: 60px; 
+
+.sidenav { height: 100%; width: 0; position: fixed; z-index: 200; top: 0; left: 0; background-color: var(--nav-bg); overflow-x: hidden; transition: 0.5s; padding-top: 60px; }
+.sidenav a { padding: 15px 30px; text-decoration: none; font-size: 1rem; color: white !important; display: block; }
+.sidenav .closebtn { position: absolute; top: 10px; right: 25px; font-size: 36px; color: white; }
+
+/* LAYOUT */
+.wrapper { width: 90%; max-width: 1200px; margin: 120px auto 50px; }
+.main-layout-container { display: flex; justify-content: space-between; gap: 40px; align-items: flex-start; }
+.content-left { flex: 1; min-width: 0; }
+.side-panel-right { flex: 0 0 260px; position: sticky; top: 100px; height: fit-content; }
+
+/* CONTENT STYLES */
+section { margin-bottom: 80px; }
+.me-content { display: flex; align-items: center; gap: 40px; margin-bottom: 30px; }
+.photo-container img { width: 350px; height: 450px; object-fit: cover; border: 1px solid #000; }
+.text-about h1 { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; line-height: 1; margin: 10px 0; }
+.label { color: var(--accent); font-size: 0.75rem; text-transform: uppercase; font-weight: 600; letter-spacing: 2px; }
+
+/* TABLES */
+.title-serif { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; margin-bottom: 20px; }
+.table-biodata, .table-pendidikan { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+.table-biodata { background: var(--dark-choco); color: white; }
+.table-biodata td { padding: 15px; border: 1px solid rgba(255,255,255,0.1); }
+.table-pendidikan th { background: var(--dark-choco); color: white; padding: 12px; }
+.table-pendidikan td { border: 1px solid #ddd; padding: 12px; text-align: center; }
+
+/* FAVORITE GRID */
+.fav-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+.fav-item-dark { background: var(--dark-choco); color: white; padding: 25px; border-radius: 12px; text-align: center; cursor: pointer; transition: 0.3s; }
+.fav-item-dark:hover { background: var(--accent); transform: translateY(-5px); }
+.fav-label-light { font-size: 0.65rem; color: #ccc; text-transform: uppercase; }
+.fav-item-dark p { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; margin-top: 5px; color: white; }
+
+/* SPOTIFY */
+.spotify-container { background: #fff; border: 1px solid #eee; padding: 25px; border-radius: 15px; }
+.spot-header { display: flex; gap: 20px; align-items: center; margin-bottom: 20px; }
+.spot-img { width: 100px; height: 100px; border-radius: 8px; object-fit: cover; }
+.spot-list { width: 100%; border-collapse: collapse; }
+.spot-list tr { cursor: pointer; }
+.spot-list tr:hover { background: #f9f9f9; }
+.spot-list td { padding: 12px; border-bottom: 1px solid #f9f9f9; font-size: 0.85rem; }
+
+/* SURVIVAL KIT GRID (THE FIX) */
+.survival-grid { 
+    display: grid !important; 
+    grid-template-columns: repeat(3, 1fr) !important; 
+    gap: 15px; 
+}
+.kit-card { background: #fff; border: 1px solid #eee; padding: 20px; border-radius: 12px; text-align: center; border-bottom: 3px solid var(--dark-choco); }
+.kit-card h3 { font-size: 0.9rem; color: var(--dark-choco); }
+
+/* WIREFRAME & CONTACT */
+.wf-box { border: 2px dashed #ccc; padding: 40px; border-radius: 15px; transition: 0.3s; }
+.wf-box:hover { border-color: var(--dark-choco); background: #f9f9f9; }
+.contact-form { display: flex; flex-direction: column; gap: 15px; }
+.contact-form input, .contact-form textarea { width: 100%; padding: 12px; border: none; border-bottom: 1px solid #ccc; outline: none; background: transparent; }
+
+/* SIDEBAR CARD */
+.card-group { background: white; padding: 20px; border: 1px solid #eee; border-radius: 12px; margin-bottom: 20px; }
+.card-group h3 { font-size: 0.7rem; color: var(--accent); text-transform: uppercase; border-bottom: 1px solid #eee; padding-bottom: 5px; margin-bottom: 10px; }
+.skill-list { list-style: none; font-size: 0.85rem; }
+
+/* MODAL & ANIMATION */
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); align-items: center; justify-content: center; }
+.modal-content { max-width: 80%; border-radius: 10px; }
+.reveal { opacity: 0; transform: translateY(30px); transition: 1s all ease; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* TAMBAHAN UNTUK BAGIAN BARU DI BAWAH */
+
+.wf-card-btn {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    width: 100%;
+    max-width: 400px;
 }
 
-.sidenav a { 
-    padding: 15px 30px; 
-    text-decoration: none; 
-    font-size: 1rem; 
-    color: white !important; 
-    display: block; 
+.wf-inner {
+    border: 1px solid #ddd;
+    padding: 40px;
+    border-radius: 12px;
+    background: #fff;
     transition: 0.3s;
 }
 
-.sidenav a:hover { 
-    background: rgba(255,255,255,0.1); 
-    padding-left: 40px; 
+.wf-inner:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
 }
 
-.sidenav .closebtn { 
-    position: absolute; 
-    top: 10px; 
-    right: 25px; 
-    font-size: 36px; 
-    color: white;
+.contact-box {
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 40px;
+    border-radius: 15px;
 }
 
-/* 5. MAIN WRAPPER & LAYOUT */
-.wrapper { 
-    width: 95%; 
-    margin: 120px auto 0; 
+.simple-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
 }
 
-.main-layout-container { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: flex-start; 
-    gap: 50px; 
-    position: relative; 
+.simple-form input, .simple-form textarea {
     width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
 }
 
-.content-left { 
-    flex: 1; 
-    min-width: 0;
+/* Container untuk judul dan tombol */
+.track-row {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Jarak antara judul dan tombol */
 }
 
-/* 6. SECTION ME (ABOUT ME) */
-.section-me { 
-    margin-bottom: 80px; 
-}
-
-.me-content { 
-    display: flex; 
-    align-items: center; 
-    gap: 60px; 
-}
-
-.photo-container img { 
-    width: 250px; 
-    height: 350px; 
-    object-fit: cover; 
-    border: 1px solid #000; 
-}
-
-.text-about h1 { 
-    font-family: 'Cormorant Garamond', serif; 
-    font-size: 4rem; 
-    margin-bottom: 10px; 
-    color: #1a1a1a;
-}
-
-.label { 
-    color: var(--accent); 
-    font-size: 0.8rem; 
-    text-transform: uppercase; 
-    font-weight: 600; 
-    letter-spacing: 2px;
-}
-
-.description { 
-    max-width: 500px; 
-    font-weight: 300; 
+.track-title {
+    font-weight: 600;
     font-size: 1rem;
 }
 
-/* 7. SIDEBAR RIGHT (STICKY) */
-.side-panel-right { 
-    flex: 0 0 280px; 
-    background: #fff; 
-    padding: 30px; 
-    border: 1px solid #eee; 
-    border-radius: 12px; 
-    position: sticky; 
-    top: 100px; 
-    margin-top: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
-}
-
-.card-group { 
-    margin-bottom: 25px; 
-}
-
-.card-group h3 { 
-    font-size: 0.75rem; 
-    text-transform: uppercase; 
-    color: var(--accent); 
-    margin-bottom: 10px; 
-    border-bottom: 1px solid #eee; 
-    padding-bottom: 5px;
-}
-
-.card-group p, .card-group li { 
-    font-size: 0.85rem; 
-    margin-bottom: 5px;
-}
-
-.card-group a { 
-    color: var(--dark-choco); 
-    text-decoration: underline;
-}
-
-/* 8. TABLES */
-.title-serif { 
-    font-family: 'Cormorant Garamond', serif; 
-    font-size: 2.5rem; 
-    margin: 60px 0 30px; 
-    text-align: center; 
-}
-
-.table-biodata { 
-    width: 100%; 
-    max-width: 600px; 
-    margin: 0 auto 50px; 
-    border-collapse: collapse; 
-    background: var(--dark-choco); 
-    color: white; 
-}
-
-.table-biodata td { 
-    padding: 18px; 
-    border: 1px solid rgba(255,255,255,0.1); 
-}
-
-.table-pendidikan { 
-    width: 100%; 
-    border-collapse: collapse; 
-    border: 2px solid var(--dark-choco); 
-    margin-bottom: 60px;
-}
-
-.table-pendidikan th { 
-    background: var(--dark-choco); 
-    color: white; 
-    padding: 15px; 
-    text-transform: uppercase; 
-    font-size: 0.9rem;
-}
-
-.table-pendidikan td { 
-    border: 1px solid #ddd; 
-    padding: 15px; 
-    text-align: center;
-}
-
-/* 9. FAV GRID (LENGKAP 6) */
-.fav-grid { 
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px; 
-    margin: 40px 0 100px; 
-}
-
-.fav-item { 
-    background: #fff; 
-    border: 1px solid #eee; 
-    padding: 20px; 
-    text-align: center; 
-    border-radius: 12px; 
-    cursor: pointer; 
+/* Tombol Play/Pause Style */
+.play-pause-btn {
+    background: #3d2b1f; /* Warna cokelat tua favoritmu */
+    color: white;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.65rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     transition: 0.3s;
 }
 
-.fav-item:hover { 
-    border-color: var(--accent); 
-    transform: translateY(-5px); 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.fav-label { 
-    font-size: 0.65rem; 
-    text-transform: uppercase; 
-    color: var(--accent); 
-    font-weight: 600; 
-}
-
-.fav-item p { 
-    font-family: 'Cormorant Garamond', serif; 
-    font-size: 1.2rem; 
-    margin-top: 8px; 
-    font-weight: 600;
-}
-
-/* 10. MUSIC PLAYER */
-.section-music { 
-    text-align: center; 
-    padding-top: 40px; 
-    border-top: 1px solid #eee; 
-}
-
-.player-btns button { 
-    background: transparent; 
-    border: 2px solid #000; 
-    padding: 10px 30px; 
-    margin: 0 10px; 
-    cursor: pointer; 
-    font-weight: 600; 
-    transition: 0.3s;
-}
-
-.player-btns button:hover {
-    background: #000;
-    color: #fff;
-}
-
-/* 11. MODAL & ANIMATION */
-.modal { 
-    display: none; 
-    position: fixed; 
-    z-index: 1000; 
-    left: 0; 
-    top: 0; 
-    width: 100%; 
-    height: 100%; 
-    background: rgba(255,255,255,0.95); 
-    align-items: center; 
-    justify-content: center; 
-}
-
-.modal-content { 
-    max-width: 400px; 
-    border: 3px solid var(--dark-choco); 
-    border-radius: 10px;
-}
-
-.reveal { 
-    opacity: 0; 
-    transform: translateY(30px); 
-    transition: 1s ease-out; 
-}
-
-.reveal.active { 
-    opacity: 1; 
-    transform: translateY(0); 
+.play-pause-btn:hover {
+    background: #8e735b; /* Warna aksen cokelat muda */
 }

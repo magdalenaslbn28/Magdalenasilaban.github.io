@@ -11,12 +11,15 @@
 <nav id="sideNav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
     <div class="nav-header"><h2 style="color: white; padding-left: 20px;">Navigation</h2></div>
-    <a href="#me">🏠 Beranda</a>
-    <a href="#profil">👤 Profil</a>
-    <a href="#academy">🎓 Academy</a>
-    <a href="#music">🎵 Musik</a>
+    <a href="#me" onclick="toggleNav()">🏠 Home</a>
+    <a href="#profil" onclick="toggleNav()">👤 Profile</a>
+    <a href="#academy" onclick="toggleNav()">🎓 Academy</a>
+    <a href="#favorites" onclick="toggleNav()">✨ Favorites</a>
+    <a href="#playlist-spotify" onclick="toggleNav()">🎵 Playlist</a>
+    <a href="#survival" onclick="toggleNav()">☕ Survival Kit</a>
+    <a href="#wireframe" onclick="toggleNav()">📄 Wireframe</a>
+    <a href="#contact" onclick="toggleNav()">📩 Contact Me</a>
 </nav>
-
 <header>
     <div class="nav-container">
         <div class="header-left">
@@ -34,7 +37,6 @@
     <div class="main-layout-container">
         
         <div class="content-left">
-            
             <section id="me" class="section-me reveal active">
                 <div class="me-content">
                     <div class="photo-container">
@@ -74,64 +76,169 @@
                 </table>
             </section>
 
-            <section id="music" class="section-music reveal">
-                <div class="music-player">
-                    <span class="label">Now Playing</span>
-                    <h4>Raindance — Dave</h4>
-                    <audio id="myAudio"><source src="raindance.mp3" type="audio/mpeg"></audio>
-                    <div class="player-btns">
-                        <button onclick="playMusic()">PLAY</button>
-                        <button onclick="pauseMusic()">PAUSE</button>
+            <section id="favorites" class="section-fav reveal">
+                <h3 class="title-serif">My Favorites</h3>
+                <div class="fav-grid">
+                    <div class="fav-item-dark" onclick="showPhoto('rapokki.jpg')">
+                        <span class="fav-label-light">Food</span>
+                        <p>Rapokki 🍛</p>
+                    </div>
+                    <div class="fav-item-dark">
+                        <span class="fav-label-light">Song</span>
+                        <p>Raindance 🎧</p>
+                    </div>
+                    <div class="fav-item-dark" onclick="showPhoto('drink.jpg')">
+                        <span class="fav-label-light">Drink</span>
+                        <p>Boba ☕</p>
+                    </div>
+                    <div class="fav-item-dark" onclick="showPhoto('movie.jpg')">
+                        <span class="fav-label-light">Movie</span>
+                        <p>Kim Bok Joo 🚀</p>
+                    </div>
+                    <div class="fav-item-dark" onclick="showPhoto('singer.jpg')">
+                        <span class="fav-label-light">Singer</span>
+                        <p>Lana Del Rey ✨</p>
+                    </div>
+                    <div class="fav-item-dark" onclick="showPhoto('aktor.jpg')">
+                        <span class="fav-label-light">Actor</span>
+                        <p>Lutesha 🎬</p>
                     </div>
                 </div>
+            </section>
 
-                <div class="fav-grid">
-                    <div class="fav-item" onclick="showPhoto('rapokki.jpg')">
-                        <span class="fav-label">Food</span><p>Rapokki 🍛</p>
+   <section id="playlist-spotify" class="reveal">
+                <h3 class="title-serif">Survival Beats</h3>
+                <div class="spotify-container">
+                    <audio id="spotifyAudio"><source src="" type="audio/mpeg"></audio>
+                    <div class="spot-header">
+                        <img src="mussic.jpg" class="spot-img">
+                        <div>
+                            <span class="label">Playlist</span>
+                            <h2 style="font-size: 1.5rem; margin: 0;">this page mood</h2>
+                        </div>
+        <table class="spot-list">
+            <tr>
+                <td>1</td>
+                <td>
+                    <div class="track-row">
+                        <span class="track-title">Cherish the Day</span>
+                        <button class="play-pause-btn" onclick="playTrack('Cherish.mp3', this)">PLAY</button>
                     </div>
-                    <div class="fav-item no-click">
-                        <span class="fav-label">Song</span><p>Raindance 🎧</p>
+                    <small>Sade</small>
+                </td>
+                <td>🤎</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>
+                    <div class="track-row">
+                        <span class="track-title">Let The Light In</span>
+                        <button class="play-pause-btn" onclick="playTrack('ldr.mp3', this)">PLAY</button>
                     </div>
-                    <div class="fav-item" onclick="showPhoto('drink.jpg')">
-                        <span class="fav-label">Drink</span><p>Brownsugar Boba ☕</p>
+                    <small>Lana Del Rey</small>
+                </td>
+                <td>🤎</td>
+            </tr>
+            <td>3</td>
+                <td>
+                    <div class="track-row">
+                        <span class="track-title">Here's Where the Story Ends</span>
+                        <button class="play-pause-btn" onclick="playTrack('The.mp3', this)">PLAY</button>
                     </div>
-                    <div class="fav-item" onclick="showPhoto('movie.jpg')">
-                        <span class="fav-label">Movie</span><p>Weightlifting Fairy Kim Bok Joo 🚀</p>
+                    <small>The Sundays</small>
+                </td>
+                <td>🤎</td>
+            </tr>
+        </table>
+    </div>
+</section>
+            </section>
+
+            <section id="survival" class="reveal">
+                <h3 class="title-serif">College Survival Kit</h3>
+                <div class="survival-grid">
+                    <div class="kit-card"><h3>☕ Iced Coffee</h3><p>Fuel for 99+ tabs.</p></div>
+                    <div class="kit-card"><h3>💻 VS Code</h3><p>Design to reality.</p></div>
+                    <div class="kit-card"><h3>🎨 Pinterest</h3><p>Main inspiration.</p></div>
+                </div>
+            </section>
+
+            <section id="wireframe" class="section-wireframe reveal" style="text-align: center; margin-top: 80px;">
+                <h3 class="title-serif">Project Documentation</h3>
+                <p style="margin-bottom: 30px;">Detailed wireframes for this website project.</p>
+                <a href="wireframe.pdf" target="_blank" class="wf-card-btn">
+                    <div class="wf-inner">
+                        <span style="font-size: 2rem;">📄</span>
+                        <p>VIEW WIREFRAME (PDF)</p>
                     </div>
-                    <div class="fav-item" onclick="showPhoto('singer.jpg')">
-                        <span class="fav-label">Singer</span><p>Lana Del Rey ✨</p>
+                </a>
+            </section>
+
+            <section id="contact" class="section-contact reveal" style="margin-top: 80px; padding-bottom: 100px;">
+                <div class="contact-box">
+                    <div class="contact-header">
+                        <h3 class="title-serif" style="margin: 0;">Contact Me</h3>
+                        <p>Feel free to reach out for collaborations 
+                            or just to share a cup of coffee</p>
                     </div>
-                    <div class="fav-item" onclick="showPhoto('actor.jpg')">
-                        <span class="fav-label">Actor</span><p>Lutesha 🎬</p>
-                    </div>
+                    <form class="simple-form">
+                        <input type="text" placeholder="Name">
+                        <input type="email" placeholder="Email">
+                        <textarea placeholder="Your Message" rows="4"></textarea>
+                        <button type="button" class="menu-btn">Send Message</button>
+                    </form>
                 </div>
             </section>
         </div>
 
         <aside class="side-panel-right">
+
             <div class="card-group">
+
                 <h3>Current Vibe</h3>
+
                 <p>☕ Coffee & Code</p>
-                <p>☘️ Earth tone 4ever</p>
+
+                <p>Autumn🍁🍂</p>
+
             </div>
+
             <div class="card-group">
+
                 <h3>Quick Links</h3>
+
                 <p><a href="www.instagram.com/kekeyihae">Instagram</a></p>
+
                 <p><a href="#">LinkedIn</a></p>
+
             </div>
+
             <div class="card-group">
+
                 <h3>Fun Facts?!</h3>
+
                 <p>I can rapp 🎤</p>
+
                 <p>I'm 08L ✨</p>
+
             </div>
+
             <div class="card-group">
+
                 <h3>Experience</h3>
+
                 <ul class="skill-list">
+
                     <li>Sekretaris OSIS SMA<3</li>
+
                     <li>OSN Biology 2x but never lolos:(</li>
+
                     <li>HMPS SI UIB WKWK</li>
+
                 </ul>
+
             </div>
+
         </aside>
 
     </div>
